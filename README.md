@@ -36,13 +36,13 @@ Ensure you have the following installed on your system:
 
     For **Linux/MacOS**:
     ```sh
-    chmod +x setup.sh
-    ./setup.sh
+    chmod +x setme-up.sh
+    ./setme-up.sh
     ```
 
     For **Windows**:
     ```sh
-    setup.bat
+    setme-up.bat
     ```
 
 This will create the required directories, set permissions, and start the Docker containers.
@@ -94,8 +94,8 @@ Here is the expected folder structure after setting up the sandbox:
 postgres-docker-sandbox/
 ├── .env
 ├── docker-compose.yml
-├── setup.sh
-├── setup.bat
+├── setme-up.sh
+├── setme-up.bat
 ├── postgres_data/       # Directory for PostgreSQL data
 ├── pgadmin/             # Directory for pgAdmin data
 └── README.md
@@ -103,8 +103,8 @@ postgres-docker-sandbox/
 
 - **.env:** Environment variables for the setup.
 - **docker-compose.yml:** Docker Compose configuration file.
-- **setup.sh:** Setup script for Linux/MacOS.
-- **setup.bat:** Setup script for Windows.
+- **setme-up.sh:** Setup script for Linux/MacOS.
+- **setme-up.bat:** Setup script for Windows.
 - **postgres_data/:** Directory where PostgreSQL will store its data.
 - **pgadmin/:** Directory where pgAdmin will store its data.
 - **README.md:** This README file.
@@ -115,13 +115,13 @@ If you encounter any issues, follow these steps:
 
 1. **Check container logs:**
     ```sh
-    docker-compose logs
+    docker compose logs
     ```
 
 2. **Restart the containers:**
     ```sh
-    docker-compose down
-    docker-compose up
+    docker compose down
+    docker compose up
     ```
 
 3. **Verify Docker and Docker Compose installation:**
