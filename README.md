@@ -25,7 +25,7 @@ Ensure you have the following installed on your system:
 
 1. **Clone the repository:**
     ```sh
-    git clone https://github.com/yourusername/postgres-docker-sandbox.git
+    git clone https://github.com/sc00bid00/postgres-docker-sandbox.git
     cd postgres-docker-sandbox
     ```
 
