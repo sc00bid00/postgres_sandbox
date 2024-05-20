@@ -1,0 +1,36 @@
+services:
+
+# DATABASE
+  postgres:
+    container_name: postgres
+    image: postgres:16.1-alpine3.18
+    restart: always
+    env_file:
+      - ./.env
+    volumes:
+      - $PWD/postgres_data:/var/lib/postgresql/data
+# PGADMIN
+  phppgadmin:
+    container_name: pgadmin
+    image: dpage/pgadmin4
+    env_file: .env
+    ports:
+      - "5050:80"
+    restart: always
+    volumes:
+      - ./pgadmin:/var/lib/pgadmin
+    depends_on:
+      - postgres
+
+# No webserver with this configuration
+## webserver + php
+#  webserver:
+#    build: ./php
+#    container_name: php_apache
+#    env_file: ./.env
+#    ports:
+#      - "81:80"
+#    volumes:
+#      - $PWD/php/src:/var/www/html
+#    depends_on:
+#      - postgres
